@@ -1,23 +1,20 @@
 package com.example.cryptocurrencytrackingapp.domain.model
 
-import kotlinx.serialization.Serializable
+import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.EMPTY_STRING
+import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.ZERO_DOUBLE
+import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.ZERO_INT
 
-@Serializable
+
 data class CryptoCurrency(
-    val askPr: String,
-    val askSz: String,
-    val baseVolume: String,
-    val bidPr: String,
-    val bidSz: String,
-    val change24h: String,
-    val changeUtc24h: String,
-    val high24h: String,
-    val lastPr: String,
-    val low24h: String,
-    val `open`: String,
-    val openUtc: String,
-    val quoteVolume: String,
-    val symbol: String,
-    val ts: String,
-    val usdtVolume: String
+    val betaValue: Double = ZERO_DOUBLE,
+    val circulatingSupply: Int = ZERO_INT,
+    val firstDataAt: String = EMPTY_STRING,
+    val id: String,
+    val lastUpdated: String = EMPTY_STRING,
+    val maxSupply: Int = ZERO_INT,
+    val name: String = EMPTY_STRING,
+    val details: CryptoCurrencyDetails,
+    val rank: Int = ZERO_INT,
+    val symbol: String = EMPTY_STRING,
+    val totalSupply: Int = ZERO_INT
 )
