@@ -6,10 +6,4 @@ import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
 @HiltAndroidApp
-class CryptoCurrencyTrackingApplication : Application() {
-    @Inject
-    lateinit var container: AppContainer
-    override fun onCreate() {
-        super.onCreate()
-    }
-}
+class CryptoCurrencyTrackingApplication : Application()

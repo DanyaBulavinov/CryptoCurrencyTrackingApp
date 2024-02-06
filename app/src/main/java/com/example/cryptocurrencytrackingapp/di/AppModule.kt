@@ -1,10 +1,8 @@
 package com.example.cryptocurrencytrackingapp.di
 
-import com.example.cryptocurrencytrackingapp.data.AppContainer
-import com.example.cryptocurrencytrackingapp.data.DefaultAppContainer
 import com.example.cryptocurrencytrackingapp.data.network.CoinBaseApi
-import com.example.cryptocurrencytrackingapp.repository.CryptoCurrenciesRepository
-import com.example.cryptocurrencytrackingapp.repository.RemoteCryptoCurrenciesRepository
+import com.example.cryptocurrencytrackingapp.domain.repository.CryptoCurrenciesRepository
+import com.example.cryptocurrencytrackingapp.data.network.repository.CryptoCurrenciesRepositoryImpl
 import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -25,9 +23,4 @@ class AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(CoinBaseApi::class.java)
-
-    @Provides
-    @Singleton
-    fun provideCryptoCurrencyRepository(coinBaseApi: CoinBaseApi): CryptoCurrenciesRepository =
-        RemoteCryptoCurrenciesRepository(coinBaseApi)
 }

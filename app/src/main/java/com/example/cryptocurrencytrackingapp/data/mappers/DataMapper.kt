@@ -1,0 +1,41 @@
+package com.example.cryptocurrencytrackingapp.data.mappers
+
+import com.example.cryptocurrencytrackingapp.data.dto.CryptoCurrencyDto
+import com.example.cryptocurrencytrackingapp.data.dto.CryptoCurrencyTickerDto
+import com.example.cryptocurrencytrackingapp.data.dto.QuoteDto
+import com.example.cryptocurrencytrackingapp.domain.model.CryptoCurrency
+import com.example.cryptocurrencytrackingapp.domain.model.CryptoCurrencyDetails
+import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.EMPTY_STRING
+import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.ZERO_DOUBLE
+import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.ZERO_INT
+
+
+fun CryptoCurrencyDto.toCryptoCurrency() = CryptoCurrency(
+    betaValue = betaValue ?: ZERO_DOUBLE,
+    circulatingSupply = circulatingSupply ?: ZERO_INT,
+    firstDataAt = firstDataAt ?: EMPTY_STRING,
+    id = id,
+    lastUpdated = lastUpdated ?: EMPTY_STRING,
+    maxSupply = maxSupply ?: ZERO_INT,
+    name = name ?: EMPTY_STRING,
+    details = quote?.toQuote() ?: CryptoCurrencyDetails(),
+    rank = rank ?: ZERO_INT,
+    symbol = symbol ?: EMPTY_STRING,
+    totalSupply = totalSupply ?: ZERO_INT
+)
+
+fun CryptoCurrencyTickerDto.toCryptoCurrencyDetails() = CryptoCurrencyDetails(
+    marketCap = marketCap ?: ZERO_INT,
+    percentChange12h = percentChange12h ?: ZERO_DOUBLE,
+    percentChange15m = percentChange15m ?: ZERO_DOUBLE,
+    percentChange1h = percentChange1h ?: ZERO_DOUBLE,
+    percentChange1y = percentChange1y ?: ZERO_DOUBLE,
+    percentChange24h = percentChange24h ?: ZERO_DOUBLE,
+    percentChange30d = percentChange30d ?: ZERO_DOUBLE,
+    percentChange30m = percentChange30m ?: ZERO_DOUBLE,
+    percentChange6h = percentChange6h ?: ZERO_DOUBLE,
+    percentChange7d = percentChange7d ?: ZERO_DOUBLE,
+    price = price ?: ZERO_DOUBLE
+)
+
+fun QuoteDto.toQuote() = cryptoCurrencyTicker?.toCryptoCurrencyDetails() ?: CryptoCurrencyDetails()

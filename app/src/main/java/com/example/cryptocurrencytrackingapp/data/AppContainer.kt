@@ -1,6 +1,6 @@
 package com.example.cryptocurrencytrackingapp.data
 
-import com.example.cryptocurrencytrackingapp.repository.CryptoCurrenciesRepository
+import com.example.cryptocurrencytrackingapp.domain.repository.CryptoCurrenciesRepository
 import javax.inject.Inject
 
 interface AppContainer {
