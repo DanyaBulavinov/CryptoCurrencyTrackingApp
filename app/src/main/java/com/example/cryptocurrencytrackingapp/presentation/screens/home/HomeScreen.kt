@@ -23,12 +23,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.cryptocurrencytrackingapp.R
 import com.example.cryptocurrencytrackingapp.domain.model.CryptoCurrency
 import com.example.cryptocurrencytrackingapp.presentation.viewmodels.HomeViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 fun HomeScreen(

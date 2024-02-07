@@ -6,6 +6,9 @@ class Constants {
 
         const val EMPTY_STRING = ""
         const val ZERO_INT = 0
+        const val ZERO_LONG = 0L
         const val ZERO_DOUBLE = 0.0
+
+         const val TAG = "API_CALLS"
     }
 }

@@ -1,13 +1,12 @@
 package com.example.cryptocurrencytrackingapp.data.dto
 
-import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.ZERO_INT
 import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class CryptoCurrencyTickerDto(
     @SerializedName("market_cap")
-    val marketCap: Int?,
+    val marketCap: Long?,
     @SerializedName("percent_change_12h")
     val percentChange12h: Double?,
     @SerializedName("percent_change_15m")
@@ -26,6 +25,6 @@ data class CryptoCurrencyTickerDto(
     val percentChange6h: Double?,
     @SerializedName("percent_change_7d")
     val percentChange7d: Double?,
-    val price: Double?,
+    val price: Double?
 )
 

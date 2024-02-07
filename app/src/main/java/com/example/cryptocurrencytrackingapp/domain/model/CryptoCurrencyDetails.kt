@@ -1,11 +1,11 @@
 package com.example.cryptocurrencytrackingapp.domain.model
 
 import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.ZERO_DOUBLE
-import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.ZERO_INT
+import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.ZERO_LONG
 
 
 data class CryptoCurrencyDetails(
-    val marketCap: Int = ZERO_INT,
+    val marketCap: Long = ZERO_LONG,
     val percentChange15m: Double = ZERO_DOUBLE,
     val percentChange12h: Double = ZERO_DOUBLE,
     val percentChange1h: Double = ZERO_DOUBLE,

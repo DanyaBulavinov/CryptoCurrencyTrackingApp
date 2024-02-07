@@ -8,24 +8,25 @@ import com.example.cryptocurrencytrackingapp.domain.model.CryptoCurrencyDetails
 import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.EMPTY_STRING
 import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.ZERO_DOUBLE
 import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.ZERO_INT
+import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.ZERO_LONG
 
 
 fun CryptoCurrencyDto.toCryptoCurrency() = CryptoCurrency(
     betaValue = betaValue ?: ZERO_DOUBLE,
-    circulatingSupply = circulatingSupply ?: ZERO_INT,
+    circulatingSupply = circulatingSupply ?: ZERO_LONG,
     firstDataAt = firstDataAt ?: EMPTY_STRING,
     id = id,
     lastUpdated = lastUpdated ?: EMPTY_STRING,
-    maxSupply = maxSupply ?: ZERO_INT,
+    maxSupply = maxSupply ?: ZERO_LONG,
     name = name ?: EMPTY_STRING,
-    details = quote?.toQuote() ?: CryptoCurrencyDetails(),
+    details = quotes?.toQuote() ?: CryptoCurrencyDetails(),
     rank = rank ?: ZERO_INT,
     symbol = symbol ?: EMPTY_STRING,
-    totalSupply = totalSupply ?: ZERO_INT
+    totalSupply = totalSupply ?: ZERO_LONG
 )
 
 fun CryptoCurrencyTickerDto.toCryptoCurrencyDetails() = CryptoCurrencyDetails(
-    marketCap = marketCap ?: ZERO_INT,
+    marketCap = marketCap ?: ZERO_LONG,
     percentChange12h = percentChange12h ?: ZERO_DOUBLE,
     percentChange15m = percentChange15m ?: ZERO_DOUBLE,
     percentChange1h = percentChange1h ?: ZERO_DOUBLE,
