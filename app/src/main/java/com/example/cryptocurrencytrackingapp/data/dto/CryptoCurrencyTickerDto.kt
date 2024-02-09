@@ -7,6 +7,8 @@ import kotlinx.serialization.Serializable
 data class CryptoCurrencyTickerDto(
     @SerializedName("market_cap")
     val marketCap: Long?,
+    @SerializedName("volume_24h")
+    val volume24h: Double?,
     @SerializedName("percent_change_12h")
     val percentChange12h: Double?,
     @SerializedName("percent_change_15m")

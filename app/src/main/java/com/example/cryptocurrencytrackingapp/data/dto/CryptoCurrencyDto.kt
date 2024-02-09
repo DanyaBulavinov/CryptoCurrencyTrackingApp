@@ -1,7 +1,6 @@
 package com.example.cryptocurrencytrackingapp.data.dto
 
 import com.google.gson.annotations.SerializedName
-import kotlinx.serialization.Contextual
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -9,7 +8,6 @@ data class CryptoCurrencyDto(
     @SerializedName("beta_value")
     val betaValue: Double?,
     @SerializedName("circulating_supply")
-    @Contextual
     val circulatingSupply: Long?,
     @SerializedName("first_data_at")
     val firstDataAt: String?,
