@@ -14,4 +14,5 @@ data class CryptoCurrencyEntity(
     val marketCap: Long,
     val price: Double,
     val volume24h: Double,
+    val percentChange24h: Double
 )

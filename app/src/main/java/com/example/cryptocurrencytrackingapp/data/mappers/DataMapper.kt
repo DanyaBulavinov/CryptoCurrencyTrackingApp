@@ -51,7 +51,8 @@ fun CryptoCurrency.toCryptoCurrencyEntity() = CryptoCurrencyEntity(
     totalSupply = totalSupply,
     marketCap = details.marketCap,
     price = details.price,
-    volume24h = details.volume24h
+    volume24h = details.volume24h,
+    percentChange24h = details.percentChange24h
 )
 
 fun CryptoCurrencyEntity.toCryptoCurrency() = CryptoCurrency(
@@ -63,6 +64,7 @@ fun CryptoCurrencyEntity.toCryptoCurrency() = CryptoCurrency(
     details = CryptoCurrencyDetails(
         marketCap = marketCap,
         price = price,
-        volume24h = volume24h
+        volume24h = volume24h,
+        percentChange24h = percentChange24h
     )
 )
