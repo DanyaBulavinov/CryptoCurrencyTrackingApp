@@ -3,6 +3,7 @@ package com.example.cryptocurrencytrackingapp.data.mappers
 import com.example.cryptocurrencytrackingapp.data.dto.CryptoCurrencyDto
 import com.example.cryptocurrencytrackingapp.data.dto.CryptoCurrencyTickerDto
 import com.example.cryptocurrencytrackingapp.data.dto.QuoteDto
+import com.example.cryptocurrencytrackingapp.data.local.CryptoCurrencyEntity
 import com.example.cryptocurrencytrackingapp.domain.model.CryptoCurrency
 import com.example.cryptocurrencytrackingapp.domain.model.CryptoCurrencyDetails
 import com.example.cryptocurrencytrackingapp.utils.Constants.Companion.EMPTY_STRING
@@ -27,6 +28,7 @@ fun CryptoCurrencyDto.toCryptoCurrency() = CryptoCurrency(
 
 fun CryptoCurrencyTickerDto.toCryptoCurrencyDetails() = CryptoCurrencyDetails(
     marketCap = marketCap ?: ZERO_LONG,
+    volume24h = volume24h ?: ZERO_DOUBLE,
     percentChange12h = percentChange12h ?: ZERO_DOUBLE,
     percentChange15m = percentChange15m ?: ZERO_DOUBLE,
     percentChange1h = percentChange1h ?: ZERO_DOUBLE,
@@ -40,3 +42,29 @@ fun CryptoCurrencyTickerDto.toCryptoCurrencyDetails() = CryptoCurrencyDetails(
 )
 
 fun QuoteDto.toQuote() = cryptoCurrencyTicker?.toCryptoCurrencyDetails() ?: CryptoCurrencyDetails()
+
+fun CryptoCurrency.toCryptoCurrencyEntity() = CryptoCurrencyEntity(
+    id = id,
+    name = name,
+    symbol = symbol,
+    rank = rank,
+    totalSupply = totalSupply,
+    marketCap = details.marketCap,
+    price = details.price,
+    volume24h = details.volume24h,
+    percentChange24h = details.percentChange24h
+)
+
+fun CryptoCurrencyEntity.toCryptoCurrency() = CryptoCurrency(
+    id = id,
+    name = name,
+    symbol = symbol,
+    rank = rank,
+    totalSupply = totalSupply,
+    details = CryptoCurrencyDetails(
+        marketCap = marketCap,
+        price = price,
+        volume24h = volume24h,
+        percentChange24h = percentChange24h
+    )
+)

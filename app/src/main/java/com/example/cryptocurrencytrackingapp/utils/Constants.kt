@@ -9,6 +9,9 @@ class Constants {
         const val ZERO_LONG = 0L
         const val ZERO_DOUBLE = 0.0
 
-         const val TAG = "API_CALLS"
+        const val TAG = "API_CALLS"
+
+        const val REFRESH_TIME = 5 * 60 * 1000 * 1000 * 1000L
+
     }
 }
