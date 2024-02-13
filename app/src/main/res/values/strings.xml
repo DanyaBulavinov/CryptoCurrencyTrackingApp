@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CryptoCurrencyTrackingApp</string>
+    <string name="details_screen">Coin Details</string>
 </resources>
