@@ -14,7 +14,7 @@ data class CryptoCurrency(
     val lastUpdated: String = EMPTY_STRING,
     val maxSupply: Long = ZERO_LONG,
     val name: String = EMPTY_STRING,
-    val details: CryptoCurrencyDetails,
+    val details: CryptoCurrencyDetails = CryptoCurrencyDetails(),
     val rank: Int = ZERO_INT,
     val symbol: String = EMPTY_STRING,
     val totalSupply: Long = ZERO_LONG

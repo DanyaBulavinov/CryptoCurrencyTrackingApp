@@ -44,27 +44,5 @@ class HomeViewModel @Inject constructor(private val cryptoCurrenciesRepository: 
             }
         }
     }
-
-//    fun createMockUpData() {
-//        val tempList = mutableListOf<CryptoCurrency>()
-//        var cryptoCurrency: CryptoCurrency?
-//        var cryptoDetails: CryptoCurrencyDetails?
-//        for (i in 1..20) {
-//            cryptoDetails = CryptoCurrencyDetails(
-//                marketCap = i * 50343 * i,
-//                percentChange24h = i * Random.nextDouble(from = -0.5, until = 1.5),
-//                price = i * 3534.0
-//            )
-//            cryptoCurrency = CryptoCurrency(
-//                id = i.toString(),
-//                name = "Bitcoin",
-//                symbol = "BTC",
-//                circulatingSupply = 10000000,
-//                details = cryptoDetails
-//            )
-//            tempList.add(cryptoCurrency)
-//        }
-//        homeUiState = HomeUiState(tempList)
-//    }
 }
 
